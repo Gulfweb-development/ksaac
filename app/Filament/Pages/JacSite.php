@@ -6,6 +6,7 @@ use App\Enums\NavigationGroup;
 use App\Filament\Support\Fields;
 use App\Settings\JacSettings;
 use BackedEnum;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
@@ -21,6 +22,8 @@ use UnitEnum;
 /** Journal website identity, contact details, app links, footer and bank accounts for subscription payments. */
 class JacSite extends SettingsPage
 {
+    use HasPageShield;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedGlobeAlt;
 
     protected static string $settings = JacSettings::class;

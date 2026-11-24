@@ -41,7 +41,7 @@ class MenuItemsTable
             ])
             ->filters([
                 SelectFilter::make('site')->options(Site::class),
-                TernaryFilter::make('top_level')->label('Level')->trueLabel(__('Top menu items'))->falseLabel(__('Dropdown items'))->queries(true: fn (Builder $q) => $q->whereNull('parent_id'), false: fn (Builder $q) => $q->whereNotNull('parent_id')),
+                TernaryFilter::make('top_level')->label('Level')->trueLabel(__('Top menu items'))->falseLabel(__('Dropdown items'))->queries(true: fn (Builder $query) => $query->whereNull('parent_id'), false: fn (Builder $query) => $query->whereNotNull('parent_id')),
                 TernaryFilter::make('is_active')->label('Visible'),
             ])
             ->headerActions([

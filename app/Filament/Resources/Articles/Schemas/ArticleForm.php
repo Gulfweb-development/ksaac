@@ -50,7 +50,7 @@ class ArticleForm
                         TextInput::make('page_to')->label('Last page')->numeric()->gte('page_from'),
                         TextInput::make('doi')->label('DOI')->maxLength(255)->placeholder('10.xxxx/xxxxx'),
                         Toggle::make('is_published')->label('Published')->default(true),
-                        Fields::pdf(),
+                        Fields::pdf(private: true),
                     ]),
                 ]),
             ]);

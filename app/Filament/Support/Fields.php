@@ -66,13 +66,21 @@ class Fields
             ->maxSize(5120);
     }
 
-    public static function pdf(string $collection = 'file', ?string $label = null): SpatieMediaLibraryFileUpload
+    public static function pdf(string $collection = 'file', ?string $label = null, bool $private = false): SpatieMediaLibraryFileUpload
     {
-        return SpatieMediaLibraryFileUpload::make($collection)
+        $field = SpatieMediaLibraryFileUpload::make($collection)
             ->label($label ?? __('PDF file'))
             ->collection($collection)
             ->acceptedFileTypes(['application/pdf'])
             ->maxSize(51200)
             ->downloadable();
+
+        return $private ? self::private($field) : $field;
+    }
+
+    /** Store on the private disk (no public URL); admins download through short-lived signed links. */
+    public static function private(SpatieMediaLibraryFileUpload $field): SpatieMediaLibraryFileUpload
+    {
+        return $field->disk('local')->visibility('private');
     }
 }

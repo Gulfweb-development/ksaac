@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -57,5 +58,23 @@ class User extends Authenticatable implements HasMedia
         $url = $this->getFirstMediaUrl('users');
 
         return $url ?: 'https://ui-avatars.com/api/?name='.urlencode($this->name);
+    }
+
+    public function subscriptions(): HasMany
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function submissions(): HasMany
+    {
+        return $this->hasMany(Submission::class);
+    }
+
+    /** Whether this reader may open the given journal issue (yearly subscription, or a single-issue purchase of it). */
+    public function canReadIssue(Issue $issue): bool
+    {
+        return $this->subscriptions()->active()
+            ->where(fn ($q) => $q->whereNull('issue_id')->orWhere('issue_id', $issue->getKey()))
+            ->exists();
     }
 }

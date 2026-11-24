@@ -6,6 +6,7 @@ use App\Enums\NavigationGroup;
 use App\Filament\Support\Fields;
 use App\Settings\KsaacSettings;
 use BackedEnum;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -19,6 +20,8 @@ use UnitEnum;
 /** KSAAC website identity, contact details, app links and footer. */
 class KsaacSite extends SettingsPage
 {
+    use HasPageShield;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedGlobeAlt;
 
     protected static string $settings = KsaacSettings::class;

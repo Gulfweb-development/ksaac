@@ -41,7 +41,20 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+/**
+ * Mirrors scripts/migrate.sh: Shield generates the permissions and super_admin gets all of them
+ * (super_admin is a plain role here, not a gate bypass). Lives here so any test file can run alone.
+ */
+function superAdmin(array $attributes = []): App\Models\Admin
 {
-    // ..
+    test()->artisan('shield:generate', ['--all' => true, '--option' => 'permissions', '--panel' => 'admin'])
+        ->assertSuccessful();
+
+    $role = Spatie\Permission\Models\Role::findOrCreate('super_admin', 'admin');
+    $role->syncPermissions(Spatie\Permission\Models\Permission::where('guard_name', 'admin')->get());
+
+    $admin = App\Models\Admin::factory()->create($attributes);
+    $admin->assignRole($role);
+
+    return $admin;
 }

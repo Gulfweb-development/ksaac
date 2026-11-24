@@ -6,6 +6,7 @@ use App\Enums\NavigationGroup;
 use App\Filament\Support\Fields;
 use App\Settings\HomepageSettings;
 use BackedEnum;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Repeater;
@@ -23,6 +24,8 @@ use UnitEnum;
 /** KSAAC homepage: which sections show, in what order, with what headings; plus the About and Journal blocks. */
 class Homepage extends SettingsPage
 {
+    use HasPageShield;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedHome;
 
     protected static string $settings = HomepageSettings::class;

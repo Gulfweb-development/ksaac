@@ -51,6 +51,7 @@ class Issue extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('cover')->singleFile();
-        $this->addMediaCollection('file')->singleFile();
+        // Private: the current issue is for subscribers; the front end serves PDFs after an access check.
+        $this->addMediaCollection('file')->singleFile()->useDisk('local');
     }
 }

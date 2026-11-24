@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Filament\Resources\Submissions\Pages;
+
+use App\Filament\Resources\Submissions\SubmissionResource;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditSubmission extends EditRecord
+{
+    protected static string $resource = SubmissionResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            ViewAction::make(),
+        ];
+    }
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('view', ['record' => $this->getRecord()]);
+    }
+}

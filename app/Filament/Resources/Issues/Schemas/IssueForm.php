@@ -32,7 +32,7 @@ class IssueForm
                         Toggle::make('is_published')->label('Published'),
                         Toggle::make('is_current')->label('Current issue')->helperText(__('Only one issue is current; subscribers unlock it. Turning this on turns it off for the previous one.')),
                         Fields::image('cover', __('Cover')),
-                        Fields::pdf('file', __('Full issue PDF')),
+                        Fields::pdf('file', __('Full issue PDF'), private: true),
                     ]),
                 ]),
             ]);

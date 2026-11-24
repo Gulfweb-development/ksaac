@@ -46,8 +46,8 @@ class NewsletterSubscribersTable
                     ->trueLabel(__('Subscribed'))
                     ->falseLabel(__('Unsubscribed'))
                     ->queries(
-                        true: fn (Builder $q) => $q->whereNull('unsubscribed_at'),
-                        false: fn (Builder $q) => $q->whereNotNull('unsubscribed_at'),
+                        true: fn (Builder $query) => $query->whereNull('unsubscribed_at'),
+                        false: fn (Builder $query) => $query->whereNotNull('unsubscribed_at'),
                     ),
                 SelectFilter::make('locale')->options(config('app.locale_labels')),
                 Filters::dateRange('created_at', __('Subscribed on')),

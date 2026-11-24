@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use App\Enums\NavigationGroup;
 use App\Settings\ContactSettings;
 use BackedEnum;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Schema;
@@ -14,6 +15,8 @@ use UnitEnum;
 
 class Contact extends SettingsPage
 {
+    use HasPageShield;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhone;
 
     protected static string $settings = ContactSettings::class;

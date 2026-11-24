@@ -7,6 +7,7 @@ use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia;
@@ -58,6 +59,12 @@ class Admin extends Authenticatable implements FilamentUser, HasMedia
         $url = $this->getFirstMediaUrl('admins');
 
         return $url ?: 'https://ui-avatars.com/api/?name='.urlencode($this->name);
+    }
+
+    /** Journal reviews assigned to this admin (when they hold the reviewer role). */
+    public function reviewAssignments(): HasMany
+    {
+        return $this->hasMany(SubmissionReview::class, 'reviewer_id');
     }
 
     public function canAccessPanel(Panel $panel): bool

@@ -5,6 +5,7 @@ namespace App\Filament\Pages;
 use App\Enums\NavigationGroup;
 use App\Settings\GeneralSettings;
 use BackedEnum;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\SettingsPage;
@@ -15,6 +16,8 @@ use UnitEnum;
 
 class General extends SettingsPage
 {
+    use HasPageShield;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCog6Tooth;
 
     protected static string $settings = GeneralSettings::class;

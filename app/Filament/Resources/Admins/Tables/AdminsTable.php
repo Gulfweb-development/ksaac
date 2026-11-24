@@ -2,6 +2,10 @@
 
 namespace App\Filament\Resources\Admins\Tables;
 
+use App\Filament\Exports\AdminExporter;
+use App\Filament\Support\Filters;
+use App\Filament\Support\TableExports;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -23,9 +27,15 @@ class AdminsTable
                 TextColumn::make('name')->searchable(),
                 TextColumn::make('email')->searchable(),
                 TextColumn::make('mobile')->searchable(),
+                TextColumn::make('roles.name')->badge(),
+                TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('roles')->relationship('roles', 'name')->multiple()->preload(),
+                Filters::dateRange(),
+            ])
+            ->headerActions([
+                TableExports::header(AdminExporter::class),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -34,6 +44,7 @@ class AdminsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
+                    ...TableExports::bulk(AdminExporter::class),
                     DeleteBulkAction::make(),
                 ]),
             ]);

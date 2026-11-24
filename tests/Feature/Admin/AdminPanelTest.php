@@ -175,3 +175,11 @@ test('activity log filters can be applied', function () {
         ->resetTableFilters()
         ->assertOk();
 });
+
+test('sidebar groups follow the admin locale and enum order', function () {
+    $this->actingAs(superAdmin(), 'admin')
+        ->withSession(['locale' => 'ar'])
+        ->get('/admin/users')
+        ->assertOk()
+        ->assertSeeInOrder(['مشترك', 'إعدادات']);
+});

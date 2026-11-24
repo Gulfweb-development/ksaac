@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Enums\NavigationGroup;
 use App\Settings\ContactSettings;
 use BackedEnum;
 use Filament\Forms\Components\TextInput;
@@ -31,7 +32,7 @@ class Contact extends SettingsPage
 
     public static function getNavigationGroup(): string|UnitEnum|null
     {
-        return __('Settings');
+        return NavigationGroup::Settings;
     }
 
     public function form(Schema $schema): Schema

@@ -2,6 +2,7 @@
 
 namespace App\Filament\Pages;
 
+use App\Enums\NavigationGroup;
 use App\Settings\GeneralSettings;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
@@ -32,7 +33,7 @@ class General extends SettingsPage
 
     public static function getNavigationGroup(): string|UnitEnum|null
     {
-        return __('Settings');
+        return NavigationGroup::Settings;
     }
 
     public function form(Schema $schema): Schema

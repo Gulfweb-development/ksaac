@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use AchyutN\FilamentLogViewer\FilamentLogViewer;
+use App\Enums\NavigationGroup;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -52,6 +53,7 @@ class AdminPanelProvider extends PanelProvider
                 // Widgets\FilamentInfoWidget::class,
             ])
             ->globalSearch(false)
+            ->databaseNotifications()
             ->sidebarCollapsibleOnDesktop()
             ->brandLogo(fn () => setting('general.logo') ? asset('storage/'.setting('general.logo')) : '')
             ->brandName(config('app.name'))
@@ -70,7 +72,7 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentShieldPlugin::make()->globallySearchable(false),
                 FilamentLoggerPlugin::make(),
-                FilamentLogViewer::make(),
+                FilamentLogViewer::make()->navigationGroup(NavigationGroup::Settings),
                 SpatieTranslatablePlugin::make()->persist(),
             ])
             ->renderHook(PanelsRenderHook::AUTH_LOGIN_FORM_BEFORE, fn (): string => view('components/developer-login')->render())

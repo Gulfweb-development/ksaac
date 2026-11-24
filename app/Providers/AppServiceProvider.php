@@ -5,10 +5,13 @@ namespace App\Providers;
 use Amzad\FilamentTranslatableGroup\TranslatableGroup;
 use App\Policies\ActivityPolicy;
 use BezhanSalleh\LanguageSwitch\LanguageSwitch;
+use Filament\Actions\Exports\ExportColumn;
+use Filament\Actions\Exports\Models\Export;
 use Filament\Forms\Components\Field;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Filters\BaseFilter;
+use Filament\Tables\Table;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
@@ -48,6 +51,23 @@ class AppServiceProvider extends ServiceProvider
 
         BaseFilter::configureUsing(function (BaseFilter $filter): void {
             $filter->translateLabel();
+        });
+
+        // Exports belong to Admin (admin guard), not User.
+        Export::polymorphicUserRelationship();
+
+        ExportColumn::configureUsing(function (ExportColumn $column): void {
+            $column->label(fn (ExportColumn $column): string => __((string) str($column->getName())->afterLast('.')->replace('_', ' ')->ucfirst()));
+        });
+
+        // Defaults for every admin table; export actions are added per table via TableExports.
+        Table::configureUsing(function (Table $table): void {
+            $table
+                ->persistFiltersInSession()
+                ->persistSearchInSession()
+                ->persistSortInSession()
+                ->striped()
+                ->paginated([10, 25, 50, 100]);
         });
 
         Tab::configureUsing(function (Tab $filter): void {

@@ -21,7 +21,7 @@ return [
             // App\Filament\Resources\UserResource::class,
         ],
         'cluster' => null,
-        'navigation_group' => 'Settings',
+        'navigation_group' => \App\Enums\NavigationGroup::Settings,
     ],
 
     'access' => [

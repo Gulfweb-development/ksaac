@@ -2,6 +2,9 @@
 
 namespace App\Filament\Resources\Users\Tables;
 
+use App\Filament\Exports\UserExporter;
+use App\Filament\Support\Filters;
+use App\Filament\Support\TableExports;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
@@ -26,9 +29,16 @@ class UsersTable
                     ->searchable(),
                 TextColumn::make('mobile')
                     ->searchable(),
+                TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Filters::dateRange(),
+            ])
+            ->headerActions([
+                TableExports::header(UserExporter::class),
             ])
             ->recordActions([
                 ViewAction::make(),
@@ -37,6 +47,7 @@ class UsersTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
+                    ...TableExports::bulk(UserExporter::class),
                     DeleteBulkAction::make(),
                 ]),
             ]);

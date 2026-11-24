@@ -15,6 +15,8 @@ use App\Settings\KsaacSettings;
 use Database\Seeders\KsaacContentSeeder;
 use Filament\Facades\Filament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Livewire;
 
 uses(RefreshDatabase::class);
@@ -136,14 +138,18 @@ test('homepage settings restore a section missing from saved data', function () 
     expect($keys)->toContain('kids')->toHaveCount(count(HomepageSettings::SECTIONS));
 });
 
-test('website settings save bilingual values', function () {
+test('website settings save bilingual values and a favicon', function () {
+    Storage::fake('public');
+
     Livewire::test(KsaacSite::class)
-        ->fillForm(['phone' => '+965 2474 8387', 'address' => ['ar' => 'الكويت', 'en' => 'Kuwait']])
+        ->fillForm(['phone' => '+965 2474 8387', 'address' => ['ar' => 'الكويت', 'en' => 'Kuwait'], 'favicon' => UploadedFile::fake()->image('icon.png', 64, 64)])
         ->call('save')
         ->assertHasNoErrors();
 
     expect(app(KsaacSettings::class)->refresh()->address)->toEqual(['ar' => 'الكويت', 'en' => 'Kuwait'])
         ->and(setting('ksaac.phone'))->toBe('+965 2474 8387');
+
+    Storage::disk('public')->assertExists(setting('ksaac.favicon'));
 });
 
 test('every KSAAC exporter renders a pdf', function (string $exporter, Closure $make) {

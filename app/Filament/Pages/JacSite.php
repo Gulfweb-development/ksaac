@@ -51,6 +51,7 @@ class JacSite extends SettingsPage
                 Section::make(__('Identity'))->columns(2)->schema([
                     Fields::translatable(TextInput::make('name')->label('Journal name')->required()->maxLength(160)),
                     FileUpload::make('logo')->image()->directory('settings')->helperText(__('Shown in the website header and footer.')),
+                    FileUpload::make('favicon')->image()->directory('settings')->maxSize(512)->helperText(__('Browser tab icon: a square PNG, SVG or ICO.')),
                 ]),
                 Section::make(__('Contact details'))->columns(3)->schema([
                     TextInput::make('phone')->maxLength(80),

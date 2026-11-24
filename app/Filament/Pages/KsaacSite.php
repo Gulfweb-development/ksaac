@@ -50,6 +50,7 @@ class KsaacSite extends SettingsPage
                     Fields::translatable(TextInput::make('org_name')->label('Society name')->required()->maxLength(160))->columnSpanFull(),
                     Fields::translatable(TextInput::make('tagline')->maxLength(60))->columnSpanFull(),
                     FileUpload::make('logo')->image()->directory('settings')->helperText(__('Shown in the website header and footer.')),
+                    FileUpload::make('favicon')->image()->directory('settings')->maxSize(512)->helperText(__('Browser tab icon: a square PNG, SVG or ICO.')),
                 ]),
                 Section::make(__('Contact details'))->columns(2)->schema([
                     TextInput::make('phone')->tel()->maxLength(40),

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sequence contains no elements</title>
+        <meta name="viewport" content="width=device-width" />
+        <style>
+         body {font-family:"Verdana";font-weight:normal;font-size: .7em;color:black;} 
+         p {font-family:"Verdana";font-weight:normal;color:black;margin-top: -5px}
+         b {font-family:"Verdana";font-weight:bold;color:black;margin-top: -5px}
+         H1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+         H2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+         pre {font-family:"Consolas","Lucida Console",Monospace;font-size:11pt;margin:0;padding:0.5em;line-height:14pt}
+         .marker {font-weight: bold; color: black;text-decoration: none;}
+         .version {color: gray;}
+         .error {margin-bottom: 10px;}
+         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:pointer; }
+         @media screen and (max-width: 639px) {
+          pre { width: 440px; overflow: auto; white-space: pre-wrap; word-wrap: break-word; }
+         }
+         @media screen and (max-width: 479px) {
+          pre { width: 280px; }
+         }
+        </style>
+    </head>
+
+    <body bgcolor="white">
+
+            <span><H1>Server Error in '/' Application.<hr width=100% size=1 color=silver></H1>
+
+            <h2> <i>Sequence contains no elements</i> </h2></span>
+
+            <font face="Arial, Helvetica, Geneva, SunSans-Regular, sans-serif ">
+
+            <b> Description: </b>An unhandled exception occurred during the execution of the current web request. Please review the stack trace for more information about the error and where it originated in the code.
+
+            <br><br>
+
+            <b> Exception Details: </b>System.InvalidOperationException: Sequence contains no elements<br><br>
+
+            <b>Source Error:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+Line 17:                 %&gt;
+Line 18:                 &lt;section class=&quot;animated fadeInDown animation-delay-8&quot;&gt;
+<font color=red>Line 19:                     &lt;h2 class=&quot;section-title text-right&quot;&gt;&lt;%= news.First().News_Subject_AR %&gt;&lt;/h2&gt;
+</font>Line 20:                     &lt;img src=&quot;&lt;%= Page.ResolveUrl(news.First().Magazins_Details_Img_AR) %&gt;&quot; class=&quot;img-responsive alignleft imageborder&quot; alt=&quot;Image&quot;&gt;
+Line 21:                     &lt;p class=&quot;p-lg&quot;&gt;&lt;%= news.First().News_Title_Desc_AR %&gt;&lt;/p&gt;</pre>                      </code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <b> Source File: </b> c:\inetpub\vhosts\aedevelopers.com\httpdocs\ksaac\News_Details.aspx<b> &nbsp;&nbsp; Line: </b> 19
+            <br><br>
+
+            <b>Stack Trace:</b> <br><br>
+
+            <table width=100% bgcolor="#ffffcc">
+               <tr>
+                  <td>
+                      <code><pre>
+
+[InvalidOperationException: Sequence contains no elements]
+   System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult) +1217
+   System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries) +120
+   System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query) +360
+   System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute(Expression expression) +58
+   System.Linq.Queryable.First(IQueryable`1 source) +220
+   ASP.news_details_aspx.__RenderContent2(HtmlTextWriter __w, Control parameterContainer) in c:\inetpub\vhosts\aedevelopers.com\httpdocs\ksaac\News_Details.aspx:19
+   System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children) +270
+   System.Web.UI.Control.RenderChildren(HtmlTextWriter writer) +14
+   System.Web.UI.Control.Render(HtmlTextWriter writer) +12
+   System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter) +67
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter) +101
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer) +27
+   System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children) +129
+   System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer) +9847138
+   System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer) +32
+   System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output) +55
+   System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter) +67
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter) +101
+   System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer) +43
+   System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children) +129
+   System.Web.UI.Control.RenderChildren(HtmlTextWriter writer) +14
+   System.Web.UI.Control.Render(HtmlTextWriter writer) +12
+   System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter) +67
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter) +101
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer) +27
+   System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children) +129
+   System.Web.UI.Control.RenderChildren(HtmlTextWriter writer) +14
+   System.Web.UI.Page.Render(HtmlTextWriter writer) +30
+   System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter) +67
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter) +101
+   System.Web.UI.Control.RenderControl(HtmlTextWriter writer) +27
+   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +1342
+</pre>                      </code>
+
+                  </td>
+               </tr>
+            </table>
+
+            <br>
+
+            <hr width=100% size=1 color=silver>
+
+            <b>Version Information:</b>&nbsp;Microsoft .NET Framework Version:4.0.30319; ASP.NET Version:4.8.4770.0
+
+            </font>
+
+    </body>
+</html>
+<!-- 
+[InvalidOperationException]: Sequence contains no elements
+   at System.Data.Linq.SqlClient.SqlProvider.Execute(Expression query, QueryInfo queryInfo, IObjectReaderFactory factory, Object[] parentArgs, Object[] userArgs, ICompiledSubQuery[] subQueries, Object lastResult)
+   at System.Data.Linq.SqlClient.SqlProvider.ExecuteAll(Expression query, QueryInfo[] queryInfos, IObjectReaderFactory factory, Object[] userArguments, ICompiledSubQuery[] subQueries)
+   at System.Data.Linq.SqlClient.SqlProvider.System.Data.Linq.Provider.IProvider.Execute(Expression query)
+   at System.Data.Linq.DataQuery`1.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at ASP.news_details_aspx.__RenderContent2(HtmlTextWriter __w, Control parameterContainer) in c:\inetpub\vhosts\aedevelopers.com\httpdocs\ksaac\News_Details.aspx:line 19
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlContainerControl.Render(HtmlTextWriter writer)
+   at System.Web.UI.HtmlControls.HtmlForm.Render(HtmlTextWriter output)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.HtmlControls.HtmlForm.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Control.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderChildrenInternal(HtmlTextWriter writer, ICollection children)
+   at System.Web.UI.Control.RenderChildren(HtmlTextWriter writer)
+   at System.Web.UI.Page.Render(HtmlTextWriter writer)
+   at System.Web.UI.Control.RenderControlInternal(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer, ControlAdapter adapter)
+   at System.Web.UI.Control.RenderControl(HtmlTextWriter writer)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+[HttpUnhandledException]: Exception of type &#39;System.Web.HttpUnhandledException&#39; was thrown.
+   at System.Web.UI.Page.HandleError(Exception e)
+   at System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   at System.Web.UI.Page.ProcessRequest()
+   at System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   at System.Web.UI.Page.ProcessRequest(HttpContext context)
+   at ASP.news_details_aspx.ProcessRequest(HttpContext context) in c:\inetpub\vhosts\aedevelopers.com\tmp\root\ff88d5f8\a88469c7\App_Web_niukr2ac.2.cs:line 0
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+--><!-- 
+This error page might contain sensitive information because ASP.NET is configured to show verbose error messages using &lt;customErrors mode="Off"/&gt;. Consider using &lt;customErrors mode="On"/&gt; or &lt;customErrors mode="RemoteOnly"/&gt; in production environments.-->

@@ -98,7 +98,9 @@ class AppServiceProvider extends ServiceProvider
                 ->locales(config('app.supported_locales'))
                 ->addDirectionByLocale()
                 // Arabic + English copies sit side by side across the whole row.
-                ->columnSpanFull();
+                ->columnSpanFull()
+                // Arabic is the primary language; English is optional and falls back to Arabic when empty.
+                ->modifyFieldsUsing(fn (Field $field, string $locale) => $locale === 'ar' ? $field : $field->required(false));
         });
 
         Gate::define('viewApiDocs', function ($user = null) {

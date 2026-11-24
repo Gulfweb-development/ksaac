@@ -12,7 +12,8 @@ return [
      * The maximum file size of an item in bytes.
      * Adding a larger file will result in an exception.
      */
-    'max_file_size' => 1024 * 1024 * 10, // 10MB
+    // Matches the 50 MB the admin's PDF upload fields allow (full journal issues are often 15-40 MB).
+    'max_file_size' => 1024 * 1024 * (int) env('MEDIA_MAX_FILE_SIZE_MB', 50),
 
     /*
      * This queue connection will be used to generate derived and responsive images.

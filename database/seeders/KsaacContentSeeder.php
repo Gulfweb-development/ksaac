@@ -5,13 +5,12 @@ namespace Database\Seeders;
 use App\Enums\Site;
 use App\Models\MenuItem;
 use App\Models\Partner;
-use App\Models\PublicationCategory;
 use App\Models\Stat;
 use App\Models\WorkArea;
 use Illuminate\Database\Seeder;
 
 /**
- * Starter KSAAC content taken from the approved homepage design (menu, stats, areas, categories, partners).
+ * Starter KSAAC content taken from the approved homepage design (menu, stats, areas, partners).
  * Skips any table that already has rows, so it is safe to re-run.
  * php artisan db:seed --class=KsaacContentSeeder
  */
@@ -33,11 +32,7 @@ class KsaacContentSeeder extends Seeder
             ['title' => ['ar' => 'المؤتمرات والندوات', 'en' => 'Conferences and seminars'], 'description' => ['ar' => 'لقاءات علمية تجمع الباحثين والتربويين من العالم العربي.', 'en' => 'Scholarly meetings for researchers and educators across the Arab world.']],
             ['title' => ['ar' => 'مجلة الطفولة العربية', 'en' => 'Arab Childhood Journal'], 'description' => ['ar' => 'مجلة علمية محكّمة تنشر البحوث في الطفولة والتربية.', 'en' => 'A peer-reviewed journal publishing research on childhood and education.']],
         ]);
-        $this->ordered(PublicationCategory::class, [
-            ['slug' => 'books-and-studies', 'name' => ['ar' => 'الكتب والدراسات', 'en' => 'Books and studies']],
-            ['slug' => 'yearbook', 'name' => ['ar' => 'الكتاب السنوي', 'en' => 'Yearbook']],
-            ['slug' => 'childrens-stories', 'name' => ['ar' => 'قصص الأطفال', 'en' => 'Children’s stories']],
-        ]);
+        // Publication categories come from the old site: php artisan import:live ksaac --only=publications
         $this->partners();
     }
 

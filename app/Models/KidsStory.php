@@ -28,6 +28,8 @@ class KidsStory extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('cover')->singleFile();
+        // The story's illustrated pages, in reading order (how the old site shows stories).
+        $this->addMediaCollection('pages');
         $this->addMediaCollection('file')->singleFile();
     }
 }

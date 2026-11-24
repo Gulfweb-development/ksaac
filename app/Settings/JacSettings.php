@@ -11,6 +11,8 @@ class JacSettings extends Settings
 
     public ?string $logo;
 
+    public ?string $favicon;
+
     public ?string $phone;
 
     public ?string $fax;

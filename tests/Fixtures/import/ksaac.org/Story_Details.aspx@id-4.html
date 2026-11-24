@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link rel="stylesheet" type="text/css" href="/DXR.axd?r=1_7,1_8,1_1-qrKUd" /><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>
+
+</title>
+
+    <!-- CSS -->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" /><link href="css/bootstrap.min.css" rel="stylesheet" media="screen" /><link href="css/font-awesome.min.css" rel="stylesheet" media="screen" /><link href="css/animate.min.css" rel="stylesheet" media="screen" /><link href="css/lightbox.css" rel="stylesheet" media="screen" /><link href="css/syntax/shCore.css" rel="stylesheet" media="screen" /><link href="css/syntax/shThemeDefault.css" rel="stylesheet" media="screen" /><link href="css/style.css" rel="stylesheet" media="screen" title="default" /><link href="css/color-default.css" rel="stylesheet" media="screen" title="default" /><link href="css/width-full.css" rel="stylesheet" media="screen" title="default" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+</head>
+<body>
+    <form method="post" action="./Story_Details.aspx?id=4" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzE4ODc5OTA4D2QWAmYPZBYCAgMPZBYCAgcPZBYEZg88KwAQAgAPFgQeD0RhdGFTb3VyY2VCb3VuZGceDl8hVXNlVmlld1N0YXRlZ2QGDxYCHgpJc1NhdmVkQWxsZw8UKwAeFCsAARYKHghJbWFnZVVybAUQfi9pbWFnZXMvNzM3LmpwZx4EVGV4dGUeFEZ1bGxzY3JlZW5WaWV3ZXJUZXh0ZR4LTmF2aWdhdGVVcmxlHg5SdW50aW1lQ3JlYXRlZGcUKwABFgofAwUQfi9pbWFnZXMvNzM4LmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83MzkuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc0MC5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzQxLmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NDIuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc0My5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzQ0LmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NDUuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc0Ni5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzQ3LmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NDguanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc0OS5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzUwLmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NTEuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc1Mi5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzUzLmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NTQuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc1NS5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzU2LmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NTcuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc1OC5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzU5LmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NjAuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc2MS5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzYyLmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NjMuanBnHwRlHwVlHwZlHwdnFCsAARYKHwMFEH4vaW1hZ2VzLzc2NC5qcGcfBGUfBWUfBmUfB2cUKwABFgofAwUQfi9pbWFnZXMvNzY1LmpwZx8EZR8FZR8GZR8HZxQrAAEWCh8DBRB+L2ltYWdlcy83NjYuanBnHwRlHwVlHwZlHwdnZBYCZg9kFgICAQ9kFgJmD2QWAgIBD2QWAmYPZBYCZg88KwAIAgAPFgYeClJlbmRlck1vZGULKYYBRGV2RXhwcmVzcy5XZWIuQVNQeENsYXNzZXMuQ29udHJvbFJlbmRlck1vZGUsIERldkV4cHJlc3MuV2ViLnYxMy4xLCBWZXJzaW9uPTEzLjEuNS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEBHgpTaG93U2hhZG93aB4SUG9wdXBBbmltYXRpb25UeXBlCymCAURldkV4cHJlc3MuV2ViLkFTUHhDbGFzc2VzLkFuaW1hdGlvblR5cGUsIERldkV4cHJlc3MuV2ViLnYxMy4xLCBWZXJzaW9uPTEzLjEuNS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEBZAY8KwASAQAWBB4JTWF4aW1pemVkZx4KU2hvd0hlYWRlcgspekRldkV4cHJlc3MuVXRpbHMuRGVmYXVsdEJvb2xlYW4sIERldkV4cHJlc3MuRGF0YS52MTMuMSwgVmVyc2lvbj0xMy4xLjUuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlU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bWFnZVNpemVNb2RlCymCAURldkV4cHJlc3MuV2ViLkFTUHhDbGFzc2VzLkltYWdlU2l6ZU1vZGUsIERldkV4cHJlc3MuV2ViLnYxMy4xLCBWZXJzaW9uPTEzLjEuNS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEAHhJJdGVtVGV4dFZpc2liaWxpdHkLKYoBRGV2RXhwcmVzcy5XZWIuQVNQeENsYXNzZXMuRWxlbWVudFZpc2liaWxpdHlNb2RlLCBEZXZFeHByZXNzLldlYi52MTMuMSwgVmVyc2lvbj0xMy4xLjUuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhAB4aTmF2aWdhdGlvbkJ1dHRvblZpc2liaWxpdHkLKwgAZBQrAAEWBB4NSW1hZ2VMb2FkTW9kZQsphgFEZXZFeHByZXNzLldlYi5BU1B4SW1hZ2VTbGlkZXIuSW1hZ2VMb2FkTW9kZSwgRGV2RXhwcmVzcy5XZWIudjEzLjEsIFZlcnNpb249MTMuMS41LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQIeD0FsbG93TW91c2VXaGVlbGdkZAIBD2QWAmYPZBYCZg9kFgJmDxQrAAsPFgQfDWceDVNob3dJbWFnZUFyZWFoZGRkZGRkD2QQFiVmAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0CDgIPAhACEQISAhMCFAIVAhYCFwIYAhkCGgIbAhwCHQIeAh8CIAIhAiICIwIkFiUUKwABFgofDwUQfi9pbWFnZXMvNzM3LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83MzguanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzczOS5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzQwLmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NDEuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc0Mi5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzQzLmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NDQuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc0NS5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzQ2LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NDcuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc0OC5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzQ5LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NTAuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc1MS5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzUyLmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NTMuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc1NC5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzU1LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NTYuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc1Ny5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzU4LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NTkuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc2MC5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzYxLmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NjIuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc2My5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzY0LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NjUuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc2Ni5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzY3LmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NjguanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc2OS5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzcwLmpwZx8GZR8EZR8QZR8HZxQrAAEWCh8PBRB+L2ltYWdlcy83NzEuanBnHwZlHwRlHxBlHwdnFCsAARYKHw8FEH4vaW1hZ2VzLzc3Mi5qcGcfBmUfBGUfEGUfB2cUKwABFgofDwUQfi9pbWFnZXMvNzczLmpwZx8GZR8EZR8QZR8HZ2RkFCsAARYCHihUaHVtYm5haWxzTW9kZU5hdmlnYXRpb25CdXR0b25WaXNpYmlsaXR5CysIAxQrAAEWBB8VCysJAh4URW5hYmxlUGFnaW5nR2VzdHVyZXNnZGQCAQ8PZA8QFgFmFgEWAh4OUGFyYW1ldGVyVmFsdWUFATQWAQIEZGQYAgUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgQFJmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkaW1hZ2VHYWxsZXJ5BSxjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGltYWdlR2FsbGVyeSRQb3B1cAUzY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRpbWFnZUdhbGxlcnkkUG9wdXAkU2xpZGVyBTpjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGltYWdlR2FsbGVyeSRQb3B1cCROYXZpZ2F0aW9uQmFyBSZjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGltYWdlR2FsbGVyeQ8UKwAHZGZmAgJmAiVnZOH94VmB7icrOAJW0CqWr75mu+LYTw0KJ1uVzE1CM1v0" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0AF466C3" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAbjn0hVYOdka5KDNdncgA72f9ouzpSgh9JAYfaBgOBF1qUF4enLXO3emfMk8iBi1quDMKVyq6TmawMekvU4NRTMu3S8pWYO1BhvsosazapYPZ9UXI7RwI+ukRHnd+AlDZ6n0P1o4x0sDOgU7zda900JJluJeE8TYVMk/z4/eWIzRw==" />
+
+        <!-- Setting Options -->
+        <div id="color-switcher" class="animated fadeIn animation-dalay-10">
+            <div id="color-switcher-tab">
+                <i class="fa fa-gear fa fa-2x"></i>
+            </div>
+            <div id="color-switcher-content">
+                <h3>Color Selector</h3>
+                <a href="#" rel="color-default.css" class="color default">default</a>
+                <a href="#" rel="color-niceblue.css" class="color niceblue">niceblue</a>
+                <a href="#" rel="color-intenseblue.css" class="color intenseblue">intenseblue</a>
+                <a href="#" rel="color-otherblue.css" class="color otherblue">otherblue</a>
+                <a href="#" rel="color-blue.css" class="color blue">blue</a>
+                <a href="#" rel="color-puregreen.css" class="color puregreen">puregreen</a>
+                <a href="#" rel="color-grassgreen.css" class="color grassgreen">grassgreen</a>
+                <a href="#" rel="color-green.css" class="color green">green</a>
+                <a href="#" rel="color-olive.css" class="color olive">olive</a>
+                <a href="#" rel="color-gold.css" class="color gold">gold</a>
+                <a href="#" rel="color-orange.css" class="color orange">orange</a>
+                <a href="#" rel="color-pink.css" class="color pink">pink</a>
+                <a href="#" rel="color-fuchsia.css" class="color fuchsia">fuchsia</a>
+                <a href="#" rel="color-violet.css" class="color violet">violet</a>
+                <a href="#" rel="color-red.css" class="color red">red</a>
+
+
+                <h3>Container Selector</h3>
+                <div class="btn-group">
+                    <button href="#" class="option btn btn-sm btn-primary" rel="width-boxed.css">Boxed</button>
+                    <button href="#" class="option btn btn-sm btn-primary" rel="width-full.css">Full Width</button>
+                </div>
+            </div>
+        </div>
+        <!-- color-switcher -->
+
+        <div class="boxed animated fadeIn animation-delay-5">
+
+            <header id="header" class="hidden-xs">
+                <div class="container">
+                    <div id="header-title">
+                        <a href="Default.aspx">
+                            <img alt="" src="img/logo--ksaac.png" /></a>
+                        
+                    </div>
+
+                    <div id="social-header" class="hidden-xs">
+                        <a href="https://twitter.com/KSAAC1" class="social-icon soc-twitter animated fadeInDown animation-delay-1"><i class="fa fa-twitter"></i></a>
+                        <a href="https://plus.google.com/116174671037140602771" class="social-icon soc-google-plus animated fadeInDown animation-delay-2"><i class="fa fa-google-plus"></i></a>
+                        <a href="https://www.facebook.com/pages/KSAAC/325315564313868" class="social-icon soc-facebook animated fadeInDown animation-delay-3"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="social-icon soc-instagram animated fadeInDown animation-delay-4"><i class="fa fa-instagram"></i></a>
+                        <a href="http://www.pinterest.com/ksaac202020/" class="social-icon soc-pinterest animated fadeInDown animation-delay-5"><i class="fa fa-pinterest"></i></a>
+                        <a href="https://www.linkedin.com/pulse/activities/ksaac-ksaac+0_2mUZ4GyvTH9K002uR8XN1C?trk=prof-0-sb-rcnt-act-link" class="social-icon soc-linkedin animated fadeInDown animation-delay-6"><i class="fa fa-linkedin"></i></a>
+                    </div>
+
+                    <div id="search-header" class="hidden-xs animated bounceInRight">
+                        <div class="input-group">
+                            <input name="ctl00$TextBox2" type="text" id="TextBox2" class="form-control" placeholder="Search..." />
+                            
+                            <span class="input-group-btn">
+                                <input type="submit" name="ctl00$Button2" value="بحث" id="Button2" class="btn btn-default" />
+                                
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                        <div class="input-group alignright">
+                            <a id="HyperLink1" href="Default_en.aspx">English</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- container -->
+            </header>
+            <!-- header -->
+
+            <nav class="navbar navbar-static-top navbar-mind" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand visible-xs" href="Default_.aspx">KSAAC </a>
+                        <a class="navbar-brand visible-xs" href="Default_en.aspx">Engilsh</a>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-mind-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <i class="fa fa-bars fa-inverse"></i>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-mind-collapse">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <ul class="nav navbar-nav" style="margin-right: 0px; float: right;">
+                            <li><a href="contact.aspx">إتصل بنا</a></li>
+                            <li><a href="http://jac-kw.org/" target="_blank">مجلة الطفولة العربية</a></li>
+                            <li><a href="Stories.aspx">ركن الأطفال</a></li>
+                            <li><a href="Library.aspx">مركز المعلومات</a></li>
+                            <li><a href="Activities.aspx">المؤتمرات</a></li>
+                            <li><a href="Projects.aspx">مشاريع الجمعية</a></li>
+                            <li><a href="Publications.aspx">مطبوعات الجمعية</a></li>
+                            <li><a href="about.aspx">عن الجمعية</a></li>
+                            <li><a href="Default.aspx">الرئيسية</a></li>
+                        </ul>
+                        <!-- nav nabvar-nav -->
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- container -->
+            </nav>
+            <!-- navbar navbar-default -->
+
+            <!-- carousel -->
+            <br />
+
+            
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title text-right">جدتى دلال والالعاب</h2>
+                    <div class="content aligncenter">
+                <input type="hidden"/><script id="dxis_1713848103" src="/DXR.axd?r=1_145,1_81,1_137,1_78,1_126,1_84,1_140,1_117,1_130,1_128,1_118-qrKUd" type="text/javascript"></script><input id="ContentPlaceHolder1_imageGallery_S" name="ctl00$ContentPlaceHolder1$imageGallery" type="hidden" value="0;30;2;2" /><table class="dxigControl" cellspacing="0" cellpadding="0" id="ContentPlaceHolder1_imageGallery">
+	<tr>
+		<td id="ContentPlaceHolder1_imageGallery_CCell" class="dxigCtrl" style="padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;vertical-align:top;"><table cellspacing="0" cellpadding="0" width="100%" style="border-collapse:separate;">
+			<tr>
+				<td id="ContentPlaceHolder1_imageGallery_ICell" class="dxigContent"><table class="dxigFlowItemsContainer" cellspacing="0" cellpadding="0" style="margin-left:-6px;margin-top:-6px;">
+					<tr>
+						<td><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig0" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/737.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig1" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/738.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig2" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/739.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig3" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/740.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig4" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/741.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig5" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/742.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig6" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/743.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig7" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/744.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig8" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/745.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig9" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/746.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig10" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/747.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig11" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/748.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig12" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/749.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig13" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/750.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig14" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/751.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig15" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/752.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig16" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/753.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig17" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/754.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig18" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/755.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig19" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/756.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig20" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/757.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig21" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/758.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig22" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/759.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig23" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/760.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig24" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/761.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig25" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/762.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig26" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/763.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig27" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/764.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig28" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/765.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div><div class="dxigFlowItem dxigItem" style="text-align:Left;vertical-align:Top;margin-left:6px;margin-top:6px;">
+							<a href="#dxig29" target="_blank"><img onload="_aspxIGIL(this, &quot;ContentPlaceHolder1_imageGallery&quot;, &quot;0&quot;, 2)" src="images/766.jpg" alt="" style="visibility:hidden;" /><div class="dxig-thumbnailBorder">
+
+							</div></a>
+						</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><div id="ContentPlaceHolder1_imageGallery_EPContainer" class="dxigEPContainer">
+					<div>
+						<a onclick="aspxDVEPClick(&#39;ContentPlaceHolder1_imageGallery&#39;)" href="javascript:void(0)">Show more items...</a>
+					</div>
+				</div></td>
+			</tr>
+		</table></td><td><input type="hidden" id="ContentPlaceHolder1_imageGallery_PopupWS" name="ContentPlaceHolder1_imageGallery_PopupWS" value="0:0:-1:-10000:-10000:0:-10000:-10000:1:0:0:1" /><div id="ContentPlaceHolder1_imageGallery_Popup_PW-1" style="position:absolute;left:0px;top:0px;z-index:10000;visibility:hidden;display:none;">
+			<table id="ContentPlaceHolder1_imageGallery_Popup_PWST-1" cellspacing="0" cellpadding="0" style="border-collapse:separate;position:relative;">
+				<tr>
+					<td class="dxpcControl" onmousedown="aspxPWMDown(event,&#39;ContentPlaceHolder1_imageGallery_Popup&#39;,-1,false)" width="200" style="cursor:default;"><table id="ContentPlaceHolder1_imageGallery_Popup_CLW-1" cellspacing="0" cellpadding="0" width="200" style="border-collapse:separate;">
+						<tr>
+							<td id="ContentPlaceHolder1_imageGallery_Popup_PWC-1" class="dxpcContent"><div id="ContentPlaceHolder1_imageGallery_Popup_CSD-1" class="dxpcContentPaddings">
+								<div class="dxig-imageSliderWrapper">
+									<input type="hidden" id="ContentPlaceHolder1_imageGallery_Popup_SliderH" name="ContentPlaceHolder1_imageGallery_Popup_SliderH" value="0" /><div class="dxisControl" id="ContentPlaceHolder1_imageGallery_Popup_Slider" style="display:none;">
+
+									</div><script id="dxss_1824938939" type="text/javascript">
+<!--
+aspxAddHoverItems('ContentPlaceHolder1_imageGallery_Popup_Slider',[[['dxis-prevPageBtnHorHover'],[''],['ntbb'],,[[{'spriteCssClass':'dxWeb_isPrevPageBtnHorHover'}]],['']],[['dxis-nextPageBtnHorHover'],[''],['ntbf'],,[[{'spriteCssClass':'dxWeb_isNextPageBtnHorHover'}]],['']]]);
+aspxAddPressedItems('ContentPlaceHolder1_imageGallery_Popup_Slider',[[['dxis-prevPageBtnHorPressed'],[''],['ntbb'],,[[{'spriteCssClass':'dxWeb_isPrevPageBtnHorPressed'}]],['']],[['dxis-nextPageBtnHorPressed'],[''],['ntbf'],,[[{'spriteCssClass':'dxWeb_isNextPageBtnHorPressed'}]],['']]]);
+aspxAddDisabledItems('ContentPlaceHolder1_imageGallery_Popup_Slider',[[['dxis-prevPageBtnHorDisabled'],[''],['ntbb'],,[[{'spriteCssClass':'dxWeb_isPrevPageBtnHorDisabled'}]],['']],[['dxis-nextPageBtnHorDisabled'],[''],['ntbf'],,[[{'spriteCssClass':'dxWeb_isNextPageBtnHorDisabled'}]],['']]]);
+
+var dxo = new ASPxClientImageSlider('ContentPlaceHolder1_imageGallery_Popup_Slider');
+window['ContentPlaceHolder1_imageGallery_Popup_Slider'] = dxo;
+dxo.uniqueID = 'ctl00$ContentPlaceHolder1$imageGallery$Popup$Slider';
+dxo.renderIFrameForPopupElements = true;
+dxo.ItemClick.AddHandler(function() {_aspxIGIC("ContentPlaceHolder1_imageGallery"); });
+dxo.items = [{'src':'/images/737.jpg'},{'src':'/images/738.jpg'},{'src':'/images/739.jpg'},{'src':'/images/740.jpg'},{'src':'/images/741.jpg'},{'src':'/images/742.jpg'},{'src':'/images/743.jpg'},{'src':'/images/744.jpg'},{'src':'/images/745.jpg'},{'src':'/images/746.jpg'},{'src':'/images/747.jpg'},{'src':'/images/748.jpg'},{'src':'/images/749.jpg'},{'src':'/images/750.jpg'},{'src':'/images/751.jpg'},{'src':'/images/752.jpg'},{'src':'/images/753.jpg'},{'src':'/images/754.jpg'},{'src':'/images/755.jpg'},{'src':'/images/756.jpg'},{'src':'/images/757.jpg'},{'src':'/images/758.jpg'},{'src':'/images/759.jpg'},{'src':'/images/760.jpg'},{'src':'/images/761.jpg'},{'src':'/images/762.jpg'},{'src':'/images/763.jpg'},{'src':'/images/764.jpg'},{'src':'/images/765.jpg'},{'src':'/images/766.jpg'},{'src':'/images/767.jpg'},{'src':'/images/768.jpg'},{'src':'/images/769.jpg'},{'src':'/images/770.jpg'},{'src':'/images/771.jpg'},{'src':'/images/772.jpg'},{'src':'/images/773.jpg'}];
+dxo.imageLoadMode = 2;
+dxo.allowMouseWheel = true;
+dxo.itemClasses = 'dxis-item';
+dxo.imageAreaClasses = 'dxis-imageArea';
+dxo.navigationBtnsVisibility = 0;
+dxo.itemTextVisibility = 0;
+dxo.showNavigationBar = false;
+dxo.InlineInitialize();
+
+//-->
+</script>
+								</div><div>
+									<div id="ContentPlaceHolder1_imageGallery_Popup_prevBtn" class="dxig-prevButton dxWeb_igPrevButton">
+
+									</div>
+								</div><div>
+									<div id="ContentPlaceHolder1_imageGallery_Popup_nextBtn" class="dxig-nextButton dxWeb_igNextButton">
+
+									</div>
+								</div><div class="dxig-bottomPanel">
+									<div class="dxig-overflowPanel">
+										<input type="hidden" id="ContentPlaceHolder1_imageGallery_Popup_NavigationBarH" name="ContentPlaceHolder1_imageGallery_Popup_NavigationBarH" value="0" /><div class="dxisControl" id="ContentPlaceHolder1_imageGallery_Popup_NavigationBar" style="display:none;">
+
+										</div><script id="dxss_865768969" type="text/javascript">
+<!--
+aspxAddHoverItems('ContentPlaceHolder1_imageGallery_Popup_NavigationBar',[[['dxis-prevBtnHorHover'],[''],['nbb'],,[[{'spriteCssClass':'dxWeb_isPrevBtnHorHover'}]],['']],[['dxis-nextBtnHorHover'],[''],['nbf'],,[[{'spriteCssClass':'dxWeb_isNextBtnHorHover'}]],['']],[['dxis-prevPageBtnHorHover'],[''],['ntbb'],,[[{'spriteCssClass':'dxWeb_isPrevPageBtnHorHover'}]],['']],[['dxis-nextPageBtnHorHover'],[''],['ntbf'],,[[{'spriteCssClass':'dxWeb_isNextPageBtnHorHover'}]],['']]]);
+aspxAddPressedItems('ContentPlaceHolder1_imageGallery_Popup_NavigationBar',[[['dxis-prevBtnHorPressed'],[''],['nbb'],,[[{'spriteCssClass':'dxWeb_isPrevBtnHorPressed'}]],['']],[['dxis-nextBtnHorPressed'],[''],['nbf'],,[[{'spriteCssClass':'dxWeb_isNextBtnHorPressed'}]],['']],[['dxis-prevPageBtnHorPressed'],[''],['ntbb'],,[[{'spriteCssClass':'dxWeb_isPrevPageBtnHorPressed'}]],['']],[['dxis-nextPageBtnHorPressed'],[''],['ntbf'],,[[{'spriteCssClass':'dxWeb_isNextPageBtnHorPressed'}]],['']]]);
+aspxAddDisabledItems('ContentPlaceHolder1_imageGallery_Popup_NavigationBar',[[['dxis-prevBtnHorDisabled'],[''],['nbb'],,[[{'spriteCssClass':'dxWeb_isPrevBtnHorDisabled'}]],['']],[['dxis-nextBtnHorDisabled'],[''],['nbf'],,[[{'spriteCssClass':'dxWeb_isNextBtnHorDisabled'}]],['']],[['dxis-prevPageBtnHorDisabled'],[''],['ntbb'],,[[{'spriteCssClass':'dxWeb_isPrevPageBtnHorDisabled'}]],['']],[['dxis-nextPageBtnHorDisabled'],[''],['ntbf'],,[[{'spriteCssClass':'dxWeb_isNextPageBtnHorDisabled'}]],['']]]);
+
+var dxo = new ASPxClientImageSlider('ContentPlaceHolder1_imageGallery_Popup_NavigationBar');
+window['ContentPlaceHolder1_imageGallery_Popup_NavigationBar'] = dxo;
+dxo.uniqueID = 'ctl00$ContentPlaceHolder1$imageGallery$Popup$NavigationBar';
+dxo.renderIFrameForPopupElements = true;
+dxo.items = [{'thumbnailSrc':'/images/737.jpg'},{'thumbnailSrc':'/images/738.jpg'},{'thumbnailSrc':'/images/739.jpg'},{'thumbnailSrc':'/images/740.jpg'},{'thumbnailSrc':'/images/741.jpg'},{'thumbnailSrc':'/images/742.jpg'},{'thumbnailSrc':'/images/743.jpg'},{'thumbnailSrc':'/images/744.jpg'},{'thumbnailSrc':'/images/745.jpg'},{'thumbnailSrc':'/images/746.jpg'},{'thumbnailSrc':'/images/747.jpg'},{'thumbnailSrc':'/images/748.jpg'},{'thumbnailSrc':'/images/749.jpg'},{'thumbnailSrc':'/images/750.jpg'},{'thumbnailSrc':'/images/751.jpg'},{'thumbnailSrc':'/images/752.jpg'},{'thumbnailSrc':'/images/753.jpg'},{'thumbnailSrc':'/images/754.jpg'},{'thumbnailSrc':'/images/755.jpg'},{'thumbnailSrc':'/images/756.jpg'},{'thumbnailSrc':'/images/757.jpg'},{'thumbnailSrc':'/images/758.jpg'},{'thumbnailSrc':'/images/759.jpg'},{'thumbnailSrc':'/images/760.jpg'},{'thumbnailSrc':'/images/761.jpg'},{'thumbnailSrc':'/images/762.jpg'},{'thumbnailSrc':'/images/763.jpg'},{'thumbnailSrc':'/images/764.jpg'},{'thumbnailSrc':'/images/765.jpg'},{'thumbnailSrc':'/images/766.jpg'},{'thumbnailSrc':'/images/767.jpg'},{'thumbnailSrc':'/images/768.jpg'},{'thumbnailSrc':'/images/769.jpg'},{'thumbnailSrc':'/images/770.jpg'},{'thumbnailSrc':'/images/771.jpg'},{'thumbnailSrc':'/images/772.jpg'},{'thumbnailSrc':'/images/773.jpg'}];
+dxo.imageLoadMode = 2;
+dxo.showImageArea = false;
+dxo.navigationBarClasses = 'dxis-nbBottom';
+dxo.navigationBarItemCssArray = 'height:90px;width:90px;';
+dxo.navigationBarItemClasses = 'dxis-nbItem';
+dxo.selectedItemClasses = 'dxis-nbSelectedItem';
+dxo.thumbnailNavigationBtnsVisibility = 3;
+dxo.nbPrevBtnHtml = '<div id="ContentPlaceHolder1_imageGallery_Popup_NavigationBar_ntbb" class="dxWeb_isPrevPageBtnHor dxis-prevPageBtnHor">\r\n\r\n</div>';
+dxo.nbNextBtnHtml = '<div id="ContentPlaceHolder1_imageGallery_Popup_NavigationBar_ntbf" class="dxWeb_isNextPageBtnHor dxis-nextPageBtnHor">\r\n\r\n</div>';
+dxo.InlineInitialize();
+
+//-->
+</script><div class="dxig-navigationBarMarker dxWeb_igNavigationBarMarker">
+
+										</div>
+									</div>
+								</div><div class="dxig-closeButtonWrapper">
+									<div id="ContentPlaceHolder1_imageGallery_Popup_ClsBtn" class="dxig-closeButton dxWeb_igCloseButton">
+
+									</div>
+								</div><div class="dxig-playPauseButtonWrapper">
+									<div class="dxig-playPauseButton dxWeb_igPlayButton">
+
+									</div><div class="dxig-playPauseButton dxWeb_igPauseButton">
+
+									</div>
+								</div>
+							</div></td>
+						</tr>
+					</table></td>
+				</tr>
+			</table>
+		</div><iframe id="ContentPlaceHolder1_imageGallery_Popup_DXPWIF-1" src="javascript:false" scrolling="no" frameborder="0" style="position:absolute;display:none;z-index:9999;filter:progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=0);">
+
+		</iframe><script id="dxss_119329306" type="text/javascript">
+<!--
+aspxAddHoverItems('ContentPlaceHolder1_imageGallery_Popup',[[['dxpcCloseButtonHover'],[''],['HCB-1'],,[['']],['Img']]]);
+
+var dxo = new ASPxClientPopupControl('ContentPlaceHolder1_imageGallery_Popup');
+window['ContentPlaceHolder1_imageGallery_Popup'] = dxo;
+dxo.uniqueID = 'ctl00$ContentPlaceHolder1$imageGallery$Popup';
+dxo.renderIFrameForPopupElements = true;
+dxo.popupAnimationType='fade';
+dxo.isPopupPositionCorrectionOn=false;
+dxo.shadowVisible=false;
+dxo.width=0;
+dxo.height=0;
+dxo.isMaximizedInit = true;
+dxo.InlineInitialize();
+
+//-->
+</script></td>
+	</tr>
+</table><table id="ContentPlaceHolder1_imageGallery_LP" class="dxigLoadingPanel" cellspacing="0" cellpadding="0" style="left:0px;top:0px;z-index:30000;display:none;">
+	<tr>
+		<td class="dx" style="padding-right:8px;"><img src="/DXR.axd?r=1_51-qrKUd" alt="" align="middle" /></td><td class="dx" style="padding-left:0px;"><span id="ContentPlaceHolder1_imageGallery_TL">Loading&hellip;</span></td>
+	</tr>
+</table><div id="ContentPlaceHolder1_imageGallery_LD" class="dxigLoadingDiv" style="left:0px;top:0px;z-index:29999;display:none;position:absolute;">
+
+</div><script id="dxss_878519581" type="text/javascript">
+<!--
+aspxAddHoverItems('ContentPlaceHolder1_imageGallery',[[['dxig-closeButtonHover'],[''],['Popup_ClsBtn'],,[[{'spriteCssClass':'dxWeb_igCloseButtonHover'}]],['']],[['dxig-prevButtonHover'],[''],['Popup_prevBtn'],,[[{'spriteCssClass':'dxWeb_igPrevButtonHover'}]],['']],[['dxig-nextButtonHover'],[''],['Popup_nextBtn'],,[[{'spriteCssClass':'dxWeb_igNextButtonHover'}]],['']]]);
+aspxAddPressedItems('ContentPlaceHolder1_imageGallery',[[['dxig-closeButtonPressed'],[''],['Popup_ClsBtn'],,[[{'spriteCssClass':'dxWeb_igCloseButtonPressed'}]],['']],[['dxig-prevButtonPressed'],[''],['Popup_prevBtn'],,[[{'spriteCssClass':'dxWeb_igPrevButtonPressed'}]],['']],[['dxig-nextButtonPressed'],[''],['Popup_nextBtn'],,[[{'spriteCssClass':'dxWeb_igNextButtonPressed'}]],['']]]);
+aspxAddDisabledItems('ContentPlaceHolder1_imageGallery',[[['dxig-closeButtonDisabled'],[''],['Popup_ClsBtn'],,[[{'spriteCssClass':'dxWeb_igCloseButtonDisabled'}]],['']],[['dxig-prevButtonDisabled'],[''],['Popup_prevBtn'],,[[{'spriteCssClass':'dxWeb_igPrevButtonDisabled'}]],['']],[['dxig-nextButtonDisabled'],[''],['Popup_nextBtn'],,[[{'spriteCssClass':'dxWeb_igNextButtonDisabled'}]],['']]]);
+
+var dxo = new ASPxClientImageGallery('ContentPlaceHolder1_imageGallery');
+window['imageGallery'] = dxo;
+dxo.callBack = function(arg) { WebForm_DoCallback('ctl00$ContentPlaceHolder1$imageGallery',arg,aspxCallback,'ContentPlaceHolder1_imageGallery',aspxCallbackError,true); };
+dxo.uniqueID = 'ctl00$ContentPlaceHolder1$imageGallery';
+dxo.renderIFrameForPopupElements = true;
+dxo.InlineInitialize();
+
+//-->
+</script>
+
+
+                        
+
+
+
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+            <aside id="footer-widgets">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 text-right">
+                            <h3 class="footer-widget-title">الروابط</h3>
+                            <ul class="list-unstyled three_cols">
+                                <li><a href="Default.aspx">الرئيسية</a></li>
+                                <li><a href="about.aspx">عن الجمعية</a></li>
+                                <li><a href="Publications.aspx">مطبوعات الجمعية</a></li>
+                                <li><a href="Projects.aspx">مشاريع الجمعية</a></li>
+                                <li><a href="Activities.aspx">المؤتمرات</a></li>
+                                <li><a href="Library.aspx">مركز المعلومات</a></li>
+                                <li><a href="Stories.aspx">ركن الأطفال</a></li>
+                                <li><a href="http://jac-kw.org/" target="_blank">مجلة الطفولة العربية</a></li>
+                                <li><a href="contact.aspx">إتصل بنا</a></li>
+                            </ul>
+                            <!-- /input-group -->
+                        </div>
+
+                        <div class="col-md-4 text-right">
+                            <h3 class="footer-widget-title">الإشتراك فى المراسلات</h3>
+                            <p>قم بتسجيل بريدك الإلكترونى لتحصل على أخر إصدارات المطبوعات</p>
+                            <div class="input-group" dir="rtl">
+                                <input name="ctl00$TextBox1" type="email" id="TextBox1" class="form-control" placeholder="البريد الإلكترونى" />
+                                
+                                <span class="input-group-btn">
+                                    <input type="submit" name="ctl00$Button1" value="إرسال" id="Button1" class="btn btn-success" />
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-3" align="right">
+                            <h3 class="footer-widget-title"></h3>
+                            <a href="https://play.google.com/store/apps/details?id=appinventor.ai_wael_hasan_618.KSAAC" target="_blank">
+                                <img src="img/google.jpg" class="img-responsive" alt="Image">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+            </aside>
+            <!-- footer-widgets -->
+
+            <footer id="footer">
+                <p>&copy; Copyright @ 2014 KSAAC <a href="http://aedevelopers.com/">WebSite by aedevelopers</a></p>
+            </footer>
+
+        </div>
+        <!-- boxed -->
+
+        <div id="back-top">
+            <a href="#header"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+
+        <!-- Scripts -->
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mixitup.min.js"></script>
+        <script src="js/lightbox-2.6.min.js"></script>
+        <script src="js/holder.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/styleswitcher.js"></script>
+
+        <script src="js/syntax/shCore.js"></script>
+        <script src="js/syntax/shBrushXml.js"></script>
+        <script src="js/syntax/shBrushJScript.js"></script>
+        <script type="text/javascript">
+            SyntaxHighlighter.all()
+        </script>
+    </form>
+</body>
+</html>

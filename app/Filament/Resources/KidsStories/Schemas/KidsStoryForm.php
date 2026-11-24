@@ -19,6 +19,7 @@ class KidsStoryForm
                     TextInput::make('title')->required()->maxLength(160)->translatableGroup(),
                     Textarea::make('description')->rows(2)->maxLength(300)->translatableGroup(),
                     Fields::image('cover', __('Cover'))->required(),
+                    Fields::image('pages', __('Story pages'))->multiple()->reorderable()->helperText(__('The illustrated pages in reading order.'))->columnSpanFull(),
                     Fields::pdf(),
                     Toggle::make('is_published')->label('Published')->default(true),
                 ]),

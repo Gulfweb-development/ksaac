@@ -3,6 +3,7 @@
 use App\Settings\ContactSettings;
 use App\Settings\GeneralSettings;
 use App\Settings\HomepageSettings;
+use App\Settings\JacSettings;
 use App\Settings\KsaacSettings;
 
 /** setting('group.key') or a nested path such as setting('ksaac.org_name.ar'). */
@@ -13,6 +14,7 @@ function setting($key, $default = null)
         'contact' => ContactSettings::class,
         'ksaac' => KsaacSettings::class,
         'homepage' => HomepageSettings::class,
+        'jac' => JacSettings::class,
     ];
 
     try {
@@ -23,7 +25,7 @@ function setting($key, $default = null)
         }
 
         return data_get(app($groups[$group])->toArray(), $path) ?? $default;
-    } catch (\Throwable $th) {
+    } catch (Throwable $th) {
         return $default;
     }
 }

@@ -1,0 +1,56 @@
+<?php
+
+namespace App\Filament\Resources\Issues;
+
+use App\Enums\NavigationGroup;
+use App\Filament\Resources\BaseResource;
+use App\Filament\Resources\Issues\Pages\CreateIssue;
+use App\Filament\Resources\Issues\Pages\EditIssue;
+use App\Filament\Resources\Issues\Pages\ListIssues;
+use App\Filament\Resources\Issues\Schemas\IssueForm;
+use App\Filament\Resources\Issues\Tables\IssuesTable;
+use App\Models\Issue;
+use BackedEnum;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+use UnitEnum;
+
+class IssueResource extends BaseResource
+{
+    protected static ?string $model = Issue::class;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBookOpen;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroup::Jac;
+
+    protected static ?int $navigationSort = 3;
+
+    protected static ?string $recordTitleAttribute = 'title';
+
+    public static function form(Schema $schema): Schema
+    {
+        return IssueForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return IssuesTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            RelationManagers\ArticlesRelationManager::class,
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListIssues::route('/'),
+            'create' => CreateIssue::route('/create'),
+            'edit' => EditIssue::route('/{record}/edit'),
+        ];
+    }
+}

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Activitylog\Models\Activity;
+use Spatie\Translatable\Facades\Translatable;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Override Cache::rememberForever to handle missing cache table during migrations
         $this->app->booting(function () {
-            if (!Schema::hasTable('cache')) {
+            if (! Schema::hasTable('cache')) {
                 // Temporarily use array cache during migrations
                 config(['cache.default' => 'array']);
             }
@@ -40,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::policy(Activity::class, ActivityPolicy::class);
+
+        // A field filled in only one language (e.g. Arabic-only names) shows that language instead of nothing.
+        Translatable::fallback(fallbackAny: true);
 
         Column::configureUsing(function (Column $column): void {
             $column->translateLabel();

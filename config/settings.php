@@ -3,6 +3,7 @@
 use App\Settings\ContactSettings;
 use App\Settings\GeneralSettings;
 use App\Settings\HomepageSettings;
+use App\Settings\JacSettings;
 use App\Settings\KsaacSettings;
 
 return [
@@ -16,6 +17,7 @@ return [
         ContactSettings::class,
         KsaacSettings::class,
         HomepageSettings::class,
+        JacSettings::class,
     ],
 
     /*

@@ -12,11 +12,10 @@ class PageExporter extends BaseExporter
     public static function getColumns(): array
     {
         return [
-            ExportColumn::make('title_ar')->label(__('Title (Arabic)'))->state(fn (Page $record) => $record->getTranslation('title', 'ar', false)),
-            ExportColumn::make('title_en')->label(__('Title (English)'))->state(fn (Page $record) => $record->getTranslation('title', 'en', false)),
+            ...self::translated('title'),
             ExportColumn::make('slug'),
             ExportColumn::make('site')->formatStateUsing(fn ($state) => $state?->getLabel()),
-            ExportColumn::make('is_published')->label(__('Published'))->formatStateUsing(fn ($state) => $state ? __('Yes') : __('No')),
+            self::yesNo('is_published', 'Published'),
             ExportColumn::make('updated_at'),
         ];
     }

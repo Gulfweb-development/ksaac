@@ -59,11 +59,11 @@ class NewsletterSubscribersTable
                 EditAction::make(),
                 ActionGroup::make([
                     Action::make('toggleSubscription')
-                    ->label(fn (NewsletterSubscriber $record) => $record->unsubscribed_at ? __('Resubscribe') : __('Unsubscribe'))
-                    ->icon(fn (NewsletterSubscriber $record) => $record->unsubscribed_at ? Heroicon::OutlinedArrowUturnLeft : Heroicon::OutlinedNoSymbol)
-                    ->color('gray')
-                    ->requiresConfirmation()
-                    ->action(fn (NewsletterSubscriber $record) => $record->update(['unsubscribed_at' => $record->unsubscribed_at ? null : now()])),
+                        ->label(fn (NewsletterSubscriber $record) => $record->unsubscribed_at ? __('Resubscribe') : __('Unsubscribe'))
+                        ->icon(fn (NewsletterSubscriber $record) => $record->unsubscribed_at ? Heroicon::OutlinedArrowUturnLeft : Heroicon::OutlinedNoSymbol)
+                        ->color('gray')
+                        ->requiresConfirmation()
+                        ->action(fn (NewsletterSubscriber $record) => $record->update(['unsubscribed_at' => $record->unsubscribed_at ? null : now()])),
                     DeleteAction::make(),
                 ]),
             ])

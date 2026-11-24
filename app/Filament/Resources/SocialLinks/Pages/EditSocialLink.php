@@ -3,17 +3,17 @@
 namespace App\Filament\Resources\SocialLinks\Pages;
 
 use App\Filament\Resources\SocialLinks\SocialLinkResource;
-use Filament\Actions\CreateAction;
-use Filament\Resources\Pages\ManageRecords;
+use Filament\Actions\DeleteAction;
+use Filament\Resources\Pages\EditRecord;
 
-class ManageSocialLinks extends ManageRecords
+class EditSocialLink extends EditRecord
 {
     protected static string $resource = SocialLinkResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

@@ -3,15 +3,15 @@
 namespace App\Models;
 
 use App\Enums\Site;
+use App\Models\Concerns\HasTranslatableFields;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Translatable\HasTranslations;
 
 class Page extends Model implements HasMedia
 {
-    use HasFactory, HasTranslations, InteractsWithMedia;
+    use HasFactory, HasTranslatableFields, InteractsWithMedia;
 
     public array $translatable = ['title', 'content', 'meta_description'];
 
@@ -22,10 +22,6 @@ class Page extends Model implements HasMedia
         return [
             'site' => Site::class,
             'is_published' => 'boolean',
-            // 'array' makes attributesToArray() hand Filament both locales, so title.ar / title.en fields fill on edit.
-            'title' => 'array',
-            'content' => 'array',
-            'meta_description' => 'array',
         ];
     }
 

@@ -2,6 +2,8 @@
 
 use App\Settings\ContactSettings;
 use App\Settings\GeneralSettings;
+use App\Settings\HomepageSettings;
+use App\Settings\KsaacSettings;
 
 return [
 
@@ -12,6 +14,8 @@ return [
     'settings' => [
         GeneralSettings::class,
         ContactSettings::class,
+        KsaacSettings::class,
+        HomepageSettings::class,
     ],
 
     /*

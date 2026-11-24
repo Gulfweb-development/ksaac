@@ -4,7 +4,9 @@ namespace App\Filament\Resources\NewsletterSubscribers;
 
 use App\Enums\NavigationGroup;
 use App\Filament\Resources\BaseResource;
-use App\Filament\Resources\NewsletterSubscribers\Pages\ManageNewsletterSubscribers;
+use App\Filament\Resources\NewsletterSubscribers\Pages\CreateNewsletterSubscriber;
+use App\Filament\Resources\NewsletterSubscribers\Pages\EditNewsletterSubscriber;
+use App\Filament\Resources\NewsletterSubscribers\Pages\ListNewsletterSubscribers;
 use App\Filament\Resources\NewsletterSubscribers\Schemas\NewsletterSubscriberForm;
 use App\Filament\Resources\NewsletterSubscribers\Tables\NewsletterSubscribersTable;
 use App\Models\NewsletterSubscriber;
@@ -39,7 +41,9 @@ class NewsletterSubscriberResource extends BaseResource
     public static function getPages(): array
     {
         return [
-            'index' => ManageNewsletterSubscribers::route('/'),
+            'index' => ListNewsletterSubscribers::route('/'),
+            'create' => CreateNewsletterSubscriber::route('/create'),
+            'edit' => EditNewsletterSubscriber::route('/{record}/edit'),
         ];
     }
 }

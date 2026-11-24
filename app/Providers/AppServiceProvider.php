@@ -92,7 +92,9 @@ class AppServiceProvider extends ServiceProvider
             $component
                 ->localesLabels(config('app.locale_labels'))
                 ->locales(config('app.supported_locales'))
-                ->addDirectionByLocale();
+                ->addDirectionByLocale()
+                // Arabic + English copies sit side by side across the whole row.
+                ->columnSpanFull();
         });
 
         Gate::define('viewApiDocs', function ($user = null) {

@@ -2,19 +2,19 @@
 
 namespace App\Filament\Resources\Admins;
 
+use App\Enums\NavigationGroup;
 use App\Filament\Resources\Admins\Pages\CreateAdmin;
 use App\Filament\Resources\Admins\Pages\EditAdmin;
 use App\Filament\Resources\Admins\Pages\ListAdmins;
 use App\Filament\Resources\Admins\Schemas\AdminForm;
 use App\Filament\Resources\Admins\Tables\AdminsTable;
 use App\Models\Admin;
-use App\Enums\NavigationGroup;
 use BackedEnum;
-use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class AdminResource extends Resource
 {

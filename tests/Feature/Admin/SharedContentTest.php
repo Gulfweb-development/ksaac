@@ -5,17 +5,17 @@ use App\Filament\Exports\PageExporter;
 use App\Filament\Resources\ContactMessages\ContactMessageResource;
 use App\Filament\Resources\ContactMessages\Pages\ListContactMessages;
 use App\Filament\Resources\ContactMessages\Pages\ViewContactMessage;
-use App\Filament\Resources\NewsletterSubscribers\Pages\ManageNewsletterSubscribers;
+use App\Filament\Resources\NewsletterSubscribers\Pages\CreateNewsletterSubscriber;
+use App\Filament\Resources\NewsletterSubscribers\Pages\ListNewsletterSubscribers;
 use App\Filament\Resources\Pages\Pages\CreatePage;
 use App\Filament\Resources\Pages\Pages\EditPage;
 use App\Filament\Resources\Pages\Pages\ListPages;
-use App\Filament\Resources\SocialLinks\Pages\ManageSocialLinks;
+use App\Filament\Resources\SocialLinks\Pages\CreateSocialLink;
 use App\Filament\Support\TableExports;
 use App\Models\ContactMessage;
 use App\Models\NewsletterSubscriber;
 use App\Models\Page;
 use App\Models\SocialLink;
-use Filament\Actions\CreateAction;
 use Filament\Facades\Filament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
@@ -40,13 +40,15 @@ test('shared content screens open', function (string $uri) {
 test('the same email can subscribe once per site', function () {
     NewsletterSubscriber::factory()->create(['site' => Site::Ksaac, 'email' => 'reader@example.com']);
 
-    Livewire::test(ManageNewsletterSubscribers::class)
-        ->callAction(CreateAction::class, ['site' => Site::Ksaac->value, 'email' => 'reader@example.com', 'locale' => 'ar'])
-        ->assertHasActionErrors(['email' => 'unique']);
+    Livewire::test(CreateNewsletterSubscriber::class)
+        ->fillForm(['site' => Site::Ksaac->value, 'email' => 'reader@example.com', 'locale' => 'ar'])
+        ->call('create')
+        ->assertHasFormErrors(['email' => 'unique']);
 
-    Livewire::test(ManageNewsletterSubscribers::class)
-        ->callAction(CreateAction::class, ['site' => Site::Jac->value, 'email' => 'reader@example.com', 'locale' => 'ar'])
-        ->assertHasNoActionErrors();
+    Livewire::test(CreateNewsletterSubscriber::class)
+        ->fillForm(['site' => Site::Jac->value, 'email' => 'reader@example.com', 'locale' => 'ar'])
+        ->call('create')
+        ->assertHasNoFormErrors();
 
     expect(NewsletterSubscriber::where('email', 'reader@example.com')->count())->toBe(2);
 });
@@ -55,7 +57,7 @@ test('subscriber status filter separates unsubscribed people', function () {
     $active = NewsletterSubscriber::factory()->create();
     $gone = NewsletterSubscriber::factory()->create(['unsubscribed_at' => now()]);
 
-    Livewire::test(ManageNewsletterSubscribers::class)
+    Livewire::test(ListNewsletterSubscribers::class)
         ->filterTable('subscribed', false)
         ->assertCanSeeTableRecords([$gone])
         ->assertCanNotSeeTableRecords([$active]);
@@ -89,9 +91,10 @@ test('contact messages filter by site', function () {
 });
 
 test('social links can be added', function () {
-    Livewire::test(ManageSocialLinks::class)
-        ->callAction(CreateAction::class, ['site' => Site::Ksaac->value, 'platform' => 'instagram', 'url' => 'https://instagram.com/ksaac', 'is_active' => true])
-        ->assertHasNoActionErrors();
+    Livewire::test(CreateSocialLink::class)
+        ->fillForm(['site' => Site::Ksaac->value, 'platform' => 'instagram', 'url' => 'https://instagram.com/ksaac', 'is_active' => true])
+        ->call('create')
+        ->assertHasNoFormErrors();
 
     expect(SocialLink::first())->platform->value->toBe('instagram');
 });

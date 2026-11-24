@@ -4,7 +4,9 @@ namespace App\Filament\Resources\SocialLinks;
 
 use App\Enums\NavigationGroup;
 use App\Filament\Resources\BaseResource;
-use App\Filament\Resources\SocialLinks\Pages\ManageSocialLinks;
+use App\Filament\Resources\SocialLinks\Pages\CreateSocialLink;
+use App\Filament\Resources\SocialLinks\Pages\EditSocialLink;
+use App\Filament\Resources\SocialLinks\Pages\ListSocialLinks;
 use App\Filament\Resources\SocialLinks\Schemas\SocialLinkForm;
 use App\Filament\Resources\SocialLinks\Tables\SocialLinksTable;
 use App\Models\SocialLink;
@@ -37,7 +39,9 @@ class SocialLinkResource extends BaseResource
     public static function getPages(): array
     {
         return [
-            'index' => ManageSocialLinks::route('/'),
+            'index' => ListSocialLinks::route('/'),
+            'create' => CreateSocialLink::route('/create'),
+            'edit' => EditSocialLink::route('/{record}/edit'),
         ];
     }
 }

@@ -433,5 +433,11 @@
     ":reviewer declined the invitation": "اعتذر :reviewer عن الدعوة",
     "Review received from :reviewer: :recommendation": "وصل تحكيم :reviewer: :recommendation",
     "Review round :n started": "بدأت جولة التحكيم :n",
-    "Submission received": "استُلم البحث"
+    "Submission received": "استُلم البحث",
+    "Award": "جائزة",
+    "Awards": "الجوائز",
+    "Image or logo": "الصورة أو الشعار",
+    "Shown on its own, or before the video loads.": "تظهر وحدها، أو قبل تحميل الفيديو.",
+    "Background video (optional)": "فيديو الخلفية (اختياري)",
+    "MP4 or WebM, up to 50 MB. Plays muted on a loop.": "بصيغة MP4 أو WebM، حتى 50 ميغابايت. يُعرض بلا صوت وبشكل متكرر."
 }

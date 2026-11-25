@@ -16,15 +16,16 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use UnitEnum;
 
+/** Homepage slider for either website. */
 class HeroSlideResource extends BaseResource
 {
     protected static ?string $model = HeroSlide::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhoto;
 
-    protected static string|UnitEnum|null $navigationGroup = NavigationGroup::Ksaac;
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroup::Shared;
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 6;
 
     protected static ?string $recordTitleAttribute = 'title';
 

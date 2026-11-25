@@ -23,7 +23,7 @@ class EditorRolesSeeder extends Seeder
             'Page', 'MenuItem', 'SocialLink', 'NewsletterSubscriber', 'ContactMessage',
         ],
         'journal_editor' => [
-            'JacSite', 'Volume', 'Issue', 'Article', 'EditorialMember', 'JournalNews', 'Video', 'SubscriptionPrice',
+            'JacSite', 'HeroSlide', 'Award', 'Volume', 'Issue', 'Article', 'EditorialMember', 'JournalNews', 'Video', 'SubscriptionPrice',
             'Subscription', 'Submission', 'SubmissionReview', 'Page',
         ],
     ];

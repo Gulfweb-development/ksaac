@@ -1,14 +1,18 @@
 <?php
 
 use App\Enums\ArticleType;
+use App\Enums\Site;
 use App\Enums\SubscriptionPlan;
 use App\Enums\SubscriptionRegion;
 use App\Filament\Exports;
 use App\Filament\Pages\JacSite;
 use App\Filament\Resources\Articles\Pages\CreateArticle;
 use App\Filament\Resources\Articles\Pages\ListArticles;
+use App\Filament\Resources\Awards\Pages\CreateAward;
 use App\Filament\Resources\EditorialMembers\Pages\ListEditorialMembers;
 use App\Filament\Resources\Issues\Pages\EditIssue;
+use App\Filament\Resources\HeroSlides\Pages\CreateHeroSlide;
+use App\Filament\Resources\HeroSlides\Pages\ListHeroSlides;
 use App\Filament\Resources\Issues\RelationManagers\ArticlesRelationManager;
 use App\Filament\Resources\SubscriptionPrices\Pages\ListSubscriptionPrices;
 use App\Filament\Resources\Videos\Pages\CreateVideo;
@@ -18,6 +22,8 @@ use App\Settings\JacSettings;
 use Database\Seeders\JournalContentSeeder;
 use Filament\Facades\Filament;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Livewire;
 
 uses(RefreshDatabase::class);
@@ -55,6 +61,7 @@ test('every journal screen opens', function (string $uri) {
     'editorial board' => 'editorial-members', 'create member' => 'editorial-members/create',
     'journal news' => 'journal-news', 'create journal news' => 'journal-news/create',
     'videos' => 'videos', 'create video' => 'videos/create',
+    'awards' => 'awards', 'create award' => 'awards/create',
     'prices' => 'subscription-prices',
 ]);
 
@@ -162,6 +169,54 @@ test('videos need a YouTube link', function () {
     expect($video->thumbnailUrl())->toBe('https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg');
 });
 
+test('journal homepage slides are kept apart from KSAAC slides', function () {
+    Storage::fake('public');
+
+    Livewire::test(CreateHeroSlide::class)
+        ->fillForm(['site' => Site::Jac, 'title' => ['ar' => 'شريحة', 'en' => 'Slide'], 'image' => UploadedFile::fake()->image('slide.jpg')])
+        ->call('create')
+        ->assertHasNoFormErrors();
+
+    $jac = Models\HeroSlide::sole();
+    $ksaac = Models\HeroSlide::create(['title' => ['ar' => 'ك', 'en' => 'K']]);
+
+    expect($jac->site)->toBe(Site::Jac)->and($ksaac->refresh()->site)->toBe(Site::Ksaac);
+
+    Livewire::test(ListHeroSlides::class)
+        ->filterTable('site', Site::Jac->value)
+        ->assertCanSeeTableRecords([$jac])
+        ->assertCanNotSeeTableRecords([$ksaac]);
+});
+
+test('a hero slide can carry a background video behind its cover image', function () {
+    Storage::fake('public');
+    $form = ['title' => ['ar' => 'شريحة', 'en' => 'Slide'], 'image' => UploadedFile::fake()->image('cover.jpg')];
+
+    Livewire::test(CreateHeroSlide::class)
+        ->fillForm($form + ['video' => UploadedFile::fake()->create('clip.gif', 100, 'image/gif')])
+        ->call('create')
+        ->assertHasFormErrors(['video']);
+
+    Livewire::test(CreateHeroSlide::class)
+        ->fillForm($form + ['video' => UploadedFile::fake()->create('clip.mp4', 2000, 'video/mp4')])
+        ->call('create')
+        ->assertHasNoFormErrors();
+
+    $slide = Models\HeroSlide::sole();
+    expect($slide->getFirstMedia('video'))->not->toBeNull()
+        ->and($slide->getFirstMedia('image'))->not->toBeNull();
+});
+
+test('awards save with an image and a sensible year', function () {
+    Storage::fake('public');
+    $form = ['title' => ['ar' => 'جائزة', 'en' => 'Award'], 'image' => UploadedFile::fake()->image('award.png')];
+
+    Livewire::test(CreateAward::class)->fillForm($form + ['year' => 99])->call('create')->assertHasFormErrors(['year']);
+    Livewire::test(CreateAward::class)->fillForm($form + ['year' => 2015])->call('create')->assertHasNoFormErrors();
+
+    expect(Models\Award::sole()->getFirstMedia('image'))->not->toBeNull();
+});
+
 test('journal settings save bank accounts', function () {
     Livewire::test(JacSite::class)
         ->fillForm(['bank_accounts' => [['currency' => 'KWD', 'account_number' => '123', 'swift' => 'COMBKWKW', 'iban' => 'KW00']]])
@@ -187,6 +242,7 @@ test('every journal exporter renders a pdf', function (string $exporter, Closure
     'board' => [Exports\EditorialMemberExporter::class, fn () => test()->seed(JournalContentSeeder::class)],
     'news' => [Exports\JournalNewsExporter::class, fn () => Models\JournalNews::create(['title' => ['ar' => 'خبر', 'en' => 'News'], 'slug' => 'n', 'published_at' => now()])],
     'videos' => [Exports\VideoExporter::class, fn () => Models\Video::create(['title' => ['ar' => 'فيديو', 'en' => 'Video'], 'youtube_url' => 'https://youtu.be/dQw4w9WgXcQ'])],
+    'awards' => [Exports\AwardExporter::class, fn () => Models\Award::create(['title' => ['ar' => 'جائزة', 'en' => 'Award'], 'year' => 2015])],
     'prices' => [Exports\SubscriptionPriceExporter::class, fn () => test()->seed(JournalContentSeeder::class)],
 ]);
 

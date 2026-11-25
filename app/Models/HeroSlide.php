@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Site;
 use App\Models\Concerns\HasTranslatableFields;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,11 +15,12 @@ class HeroSlide extends Model implements HasMedia
 
     public array $translatable = ['kicker', 'title', 'subtitle', 'button_label'];
 
-    protected $fillable = ['kicker', 'title', 'subtitle', 'button_label', 'button_url', 'is_active', 'sort'];
+    protected $fillable = ['site', 'kicker', 'title', 'subtitle', 'button_label', 'button_url', 'is_active', 'sort'];
 
     protected function casts(): array
     {
         return [
+            'site' => Site::class,
             'is_active' => 'boolean',
         ];
     }
@@ -26,5 +28,6 @@ class HeroSlide extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('image')->singleFile();
+        $this->addMediaCollection('video')->singleFile();
     }
 }

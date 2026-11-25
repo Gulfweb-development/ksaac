@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-/** Arab Childhood Journal (jac-kw.org). Translatable columns are JSON {ar, en}; PDFs and covers live in the media table. */
+/** Journal of Arab Children (jac-kw.org). Translatable columns are JSON {ar, en}; PDFs and covers live in the media table. */
 return new class extends Migration
 {
     public function up(): void

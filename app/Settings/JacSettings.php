@@ -4,7 +4,7 @@ namespace App\Settings;
 
 use Spatie\LaravelSettings\Settings;
 
-/** Arab Childhood Journal website: identity, contact, app links, footer and the bank accounts subscribers pay into. */
+/** Journal of Arab Children website: identity, contact, app links, footer and the bank accounts subscribers pay into. */
 class JacSettings extends Settings
 {
     public array $name;

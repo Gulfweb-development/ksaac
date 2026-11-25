@@ -69,7 +69,7 @@ class Homepage extends SettingsPage
             'about' => __('About the Society'),
             'news' => __('Latest news'),
             'publications' => __('Publications'),
-            'journal' => __('Arab Childhood Journal'),
+            'journal' => __('Journal of Arab Children'),
             'conferences' => __('Conferences'),
             'project' => __('Featured project'),
             'kids' => __('Kids corner'),

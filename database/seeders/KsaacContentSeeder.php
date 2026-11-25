@@ -30,7 +30,7 @@ class KsaacContentSeeder extends Seeder
             ['title' => ['ar' => 'البحوث والدراسات', 'en' => 'Research and studies'], 'description' => ['ar' => 'دعم البحوث الجديدة في تنمية الطفولة المبكرة والتربية.', 'en' => 'Supporting new research in early childhood development and education.']],
             ['title' => ['ar' => 'المطبوعات والنشر', 'en' => 'Publications'], 'description' => ['ar' => 'إصدار الكتب والدراسات والمواد التحليلية والتشخيصية والتقنية.', 'en' => 'Books, studies, and analytical, diagnostic and technical materials.']],
             ['title' => ['ar' => 'المؤتمرات والندوات', 'en' => 'Conferences and seminars'], 'description' => ['ar' => 'لقاءات علمية تجمع الباحثين والتربويين من العالم العربي.', 'en' => 'Scholarly meetings for researchers and educators across the Arab world.']],
-            ['title' => ['ar' => 'مجلة الطفولة العربية', 'en' => 'Arab Childhood Journal'], 'description' => ['ar' => 'مجلة علمية محكّمة تنشر البحوث في الطفولة والتربية.', 'en' => 'A peer-reviewed journal publishing research on childhood and education.']],
+            ['title' => ['ar' => 'مجلة الطفولة العربية', 'en' => 'Journal of Arab Children'], 'description' => ['ar' => 'مجلة علمية محكّمة تنشر البحوث في الطفولة والتربية.', 'en' => 'A peer-reviewed journal publishing research on childhood and education.']],
         ]);
         // Publication categories come from the old site: php artisan import:live ksaac --only=publications
         $this->partners();
@@ -77,7 +77,7 @@ class KsaacContentSeeder extends Seeder
             [['ar' => 'المؤتمرات', 'en' => 'Conferences'], '/conferences'],
             [['ar' => 'مركز المعلومات', 'en' => 'Information Center'], '/information-center'],
             [['ar' => 'ركن الأطفال', 'en' => 'Kids Corner'], '/kids', [], ['ar' => 'قصص', 'en' => 'Stories']],
-            [['ar' => 'مجلة الطفولة العربية', 'en' => 'Arab Childhood Journal'], 'https://jac-kw.org', [], null, true],
+            [['ar' => 'مجلة الطفولة العربية', 'en' => 'Journal of Arab Children'], 'https://jac-kw.org', [], null, true],
             [['ar' => 'إتصل بنا', 'en' => 'Contact Us'], '/contact'],
         ];
 
@@ -117,7 +117,7 @@ class KsaacContentSeeder extends Seeder
             ['ibby.svg', 'المجلس الدولي لكتب اليافعين', 'International Board on Books for Young People (IBBY)'],
             ['shamaa.png', 'شبكة المعلومات العربية التربوية (شمعة)', 'Arab Educational Information Network (Shamaa)'],
             ['reggio.svg', 'ريجيو تشلدرن — ريجيو إميليا', 'Reggio Children — Reggio Emilia'],
-            ['jac.png', 'مجلة الطفولة العربية', 'Arab Childhood Journal'],
+            ['jac.png', 'مجلة الطفولة العربية', 'Journal of Arab Children'],
         ];
 
         foreach ($partners as $i => [$file, $ar, $en]) {

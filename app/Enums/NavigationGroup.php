@@ -16,7 +16,7 @@ enum NavigationGroup implements HasLabel
     {
         return match ($this) {
             self::Ksaac => __('KSAAC'),
-            self::Jac => __('Arab Childhood Journal'),
+            self::Jac => __('Journal of Arab Children'),
             self::Shared => __('Shared'),
             self::Settings => __('Settings'),
         };

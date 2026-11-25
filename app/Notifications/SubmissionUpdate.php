@@ -41,6 +41,6 @@ class SubmissionUpdate extends Notification
             ->line('“'.$s->title.'”')
             ->line($message)
             ->when(filled($this->comments), fn (MailMessage $m) => $m->line(__('Comments:'))->line($this->comments))
-            ->salutation(__('Arab Childhood Journal'));
+            ->salutation(__('Journal of Arab Children'));
     }
 }

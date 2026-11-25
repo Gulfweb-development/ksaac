@@ -15,7 +15,7 @@ enum Site: string implements HasColor, HasLabel
     {
         return match ($this) {
             self::Ksaac => __('KSAAC'),
-            self::Jac => __('Arab Childhood Journal'),
+            self::Jac => __('Journal of Arab Children'),
         };
     }
 

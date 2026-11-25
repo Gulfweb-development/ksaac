@@ -23,7 +23,7 @@ class SubscriptionDecision extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         $s = $this->subscription;
-        $mail = (new MailMessage)->greeting(__('Dear :name,', ['name' => $s->name]))->salutation(__('Arab Childhood Journal'));
+        $mail = (new MailMessage)->greeting(__('Dear :name,', ['name' => $s->name]))->salutation(__('Journal of Arab Children'));
 
         if ($s->status === SubscriptionStatus::Rejected) {
             return $mail

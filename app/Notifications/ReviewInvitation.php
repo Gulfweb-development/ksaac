@@ -29,7 +29,7 @@ class ReviewInvitation extends Notification
         return (new MailMessage)
             ->subject(__('Review invitation: :reference', ['reference' => $submission->reference]))
             ->greeting(__('Dear :name,', ['name' => $notifiable->name]))
-            ->line(__('The Arab Childhood Journal invites you to review the following manuscript:'))
+            ->line(__('The Journal of Arab Children invites you to review the following manuscript:'))
             ->line('“'.$submission->title.'”')
             ->when($this->review->due_on, fn (MailMessage $m) => $m->line(__('Please send your review by :date.', ['date' => $this->review->due_on->format('Y-m-d')])))
             ->action(__('Open the review'), MyReviewResource::getUrl('edit', ['record' => $this->review]))
